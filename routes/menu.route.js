@@ -7,13 +7,13 @@ router.post('/', async(req, res) => {
         const data = req.body;
         const menuHotel = new Menu(data);
         const response = await menuHotel.save();
-        console.log("Menu data is :", response);
+        console.log("Menu data is saved :");
         res.status(200).json(response);
     }
     catch(err){
         console.log(err);
         res.status(500).json({
-            error: "Internal server error"
+            error: "Internal server error found in menu routes"
         })
     }
 })
@@ -89,47 +89,6 @@ router.put('/:id', async(req, res) => {
     }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 router.delete('/:id', async(req, res) => {
     try{
         const menuId = req.params.id;
@@ -157,18 +116,3 @@ router.delete('/:id', async(req, res) => {
 })
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
